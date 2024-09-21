@@ -18,8 +18,8 @@ class Solution:
                 m -= 1
             else:
                 nums1[last] = nums2[n - 1]
-                n -= 1 
-            last -= 1      
+                n -= 1
+            last -= 1
         # Fill nums1's head from nums2's leftover if there is. 
         while n > 0:
             nums1[last] = nums2[n - 1]
