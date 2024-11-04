@@ -23,3 +23,7 @@ class Solution:
             right += 1
 
         return maxProfit
+
+
+# Time: O(N)
+# Space: O(1)
