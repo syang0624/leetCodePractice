@@ -23,3 +23,9 @@ class Solution:
             else:
                 heapq.heappushpop(min_heap, num)
         return min_heap[0]
+
+
+# Tiime: O(N + klogN)
+# heapify takes O(N) time and heapop takes O(logN) time but for k-1 times
+
+# Space: O(1)
