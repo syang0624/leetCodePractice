@@ -14,6 +14,9 @@ class ProductOfNumbers:
         if k > self.size:
             return 0
         return self.prefix[self.size] // self.prefix[self.size - k]
+    
+# Time Complexity: O(1)
+# Space Complexity: O(N)
 
 
 # Your ProductOfNumbers object will be instantiated and called as such:
