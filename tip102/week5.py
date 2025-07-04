@@ -114,31 +114,63 @@
 # print_linked_list(catch_fish(fish_list))
 # print(catch_fish(empty_list))
 
-class Node:
-    def __init__(self, fish_name, next=None):
-        self.fish_name = fish_name
-        self.next = next
+# class Node:
+#     def __init__(self, fish_name, next=None):
+#         self.fish_name = fish_name
+#         self.next = next
 
+# # For testing
+# def print_linked_list(head):
+#     current = head
+#     while current:
+#         print(current.fish_name, end=" -> " if current.next else "\n")
+#         current = current.next
+
+
+# def fish_chances(head, fish_name):
+    
+#     total_count = 0
+
+#     def helper(head):
+#         nonlocal total_count
+#         if not head:
+#             return 0
+#         total_count += 1
+#         return helper(head.next) + (1 if head.fish_name == fish_name else 0)
+    
+#     return round(helper(head) / total_count, 2)
+# fish_list = Node("Carp", Node("Dace", Node("Cherry Salmon")))
+# print(fish_chances(fish_list, "Dace"))
+# print(fish_chances(fish_list, "Rainbow Trout"))
+
+class Node:
+    def __init__(self, value=None, next=None):
+        self.value = value
+        self.next = next
+        
 # For testing
 def print_linked_list(head):
     current = head
     while current:
-        print(current.fish_name, end=" -> " if current.next else "\n")
+        print(current.value, end=" -> " if current.next else "\n")
         current = current.next
 
+def remove_tail(head):
+    if head is None:
+        return None
+    if head.next is None:
+        return None 
+        
+    current = head
+    while current.next.next: 
+        current = current.next
 
-def fish_chances(head, fish_name):
-    
-    total_count = 0
+    current.next = None 
+    return head
 
-    def helper(head):
-        nonlocal total_count
-        if not head:
-            return 0
-        total_count += 1
-        return helper(head.next) + (1 if head.fish_name == fish_name else 0)
-    
-    return round(helper(head) / total_count, 2)
-fish_list = Node("Carp", Node("Dace", Node("Cherry Salmon")))
-print(fish_chances(fish_list, "Dace"))
-print(fish_chances(fish_list, "Rainbow Trout"))
+head = Node("Isabelle", Node("Alfonso", Node("Cyd")))
+# head = Node("Isabelle", Node("Alfonso"))
+
+# Linked List: Isabelle -> Alfonso -> Cyd
+print_linked_list(remove_tail(head))
+
