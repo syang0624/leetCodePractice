@@ -3,8 +3,8 @@ from typing import List
 class Solution:
     def matchPlayersAndTrainers(self, players: List[int], trainers: List[int]) -> int:
         count = 0
-        players = sorted(players)
-        trainers = sorted(trainers)
+        players.sort()
+        trainers.sort()
 
         j = 0
         for i in range(len(players)):
