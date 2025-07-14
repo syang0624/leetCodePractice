@@ -10,12 +10,18 @@ class ListNode:
 
 class Solution:
     def getDecimalValue(self, head: Optional[ListNode]) -> int:
+        # stack = []
+        # while head:
+        #     stack.append(head.val)
+        #     head = head.next
+        # number = 0
+        # for i in range(len(stack)):
+        #     s = stack.pop()
+        #     number += s * (2**i)
+        # return number
         stack = []
         while head:
-            stack.append(head.val)
+            stack.append(str(head.val))
             head = head.next
-        number = 0
-        for i in range(len(stack)):
-            s = stack.pop()
-            number += s * (2**i)
-        return number
+        
+        return int("".join(stack), 2)
