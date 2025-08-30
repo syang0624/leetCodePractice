@@ -14,3 +14,6 @@ class Solution:
                         return True
         
         return count >= n
+
+# Time Complexity: O(N)
+# Space Complexity: O(1)
